@@ -25,3 +25,15 @@ jobs:
       - name: Run test suite
         run: |
           pipenv run pytest
+
+  name: format
+  on: [push, pull_request]
+  jobs:
+    linter_name:
+      name: runner / black formatter
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: riybha216/action-black@v1
+          with:
+            black_args: ". --check"
