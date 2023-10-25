@@ -27,7 +27,6 @@ jobs:
           pipenv run pytest
 
   format:
-    steps:
-      - name: Run black formatter
-      uses: rickstaa/action-black@v1.3.1
+    - name: Run black formatter
+    uses: rickstaa/action-black@v1.3.1
             
