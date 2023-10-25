@@ -4,6 +4,9 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    format:
+      - name: Run black formatter
+        uses: rickstaa/action-black@v1.3.1
     timeout-minutes: 10
     steps:
       - name: Check out repository code
@@ -25,7 +28,4 @@ jobs:
       - name: Run test suite
         run: |
           pipenv run pytest
-  format:
-    - name: Run black formatter
-      uses: rickstaa/action-black@v1.3.1
             
