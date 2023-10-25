@@ -25,3 +25,8 @@ jobs:
       - name: Run test suite
         run: |
           pipenv run pytest
+  format:
+    name: Run black formatter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: rickstaa/action-black@v1.3.1
